@@ -33,9 +33,9 @@ namespace Locauto.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Fabricante fabricante)
         {
-            fabricante.Id = Fabricante.Select(x => x.Id).Max() + 1;
-            Fabricante.Add(fabricante);
-            return RedirectToAction("Index");
+            fabricante.Id = Fabricantes.Select(x => x.Id).Max() + 1;
+            Fabricantes.Add(fabricante);
+            return RedirectToAction("Index");    
         }
     }
 }
